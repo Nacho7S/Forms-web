@@ -2,7 +2,8 @@ const { Schema, default: mongoose } = require("mongoose");
 
 const questionsSchema = new Schema({
     formId: { type: Schema.Types.ObjectId, ref: 'Form', required: true },
-    materialId: { type: Schema.Types.ObjectId, ref: 'Materials'},
+    // materialId: { type: Schema.Types.ObjectId, ref: 'Materials'},
+    subMaterialId: { type: String},
     questionText: { type: String, required: true },
     questionType: {
         type: String,
@@ -35,7 +36,7 @@ const questionsSchema = new Schema({
         maxLabel: String
     },
     isRequired: { type: Boolean, default: false },
-    order: { type: Number, required: true }
+    order: { type: Number, required: true, unique: true },
 });
 
 const QuestionsModel = mongoose.model.Questions || mongoose.model("Questions", questionsSchema)

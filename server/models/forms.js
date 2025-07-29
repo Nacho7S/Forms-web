@@ -5,7 +5,8 @@ const formSchema = new Schema({
     description: String,
     createdBy: { type: Schema.Types.ObjectId, ref: 'Users', required: true },
     isActive: { type: Boolean, default: true },
-    materialId: { type: Schema.Types.ObjectId, ref: 'Materials'},
+    // materialId: { type: Schema.Types.ObjectId, ref: 'Materials'},
+    materialId: { type: String },
     createdAt: { type: Date, default: Date.now }
 });
 

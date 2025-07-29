@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch bin/www.js"
+    "dev": "node --watch bin/www.js",
+    "test": "jest --watchAll",
+    "test:ci": "jest --ci --runInBand --forceExit"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
+    "jest": "^30.0.5",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.3",
     "rate-limiter-flexible": "^7.1.1"
